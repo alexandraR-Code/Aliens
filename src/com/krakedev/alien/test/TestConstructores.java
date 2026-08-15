@@ -1,4 +1,6 @@
-package com.krakedev.alien;
+package com.krakedev.alien.test;
+
+import com.krakedev.alien.Aliens;
 
 public class TestConstructores {
 
@@ -13,7 +15,5 @@ public class TestConstructores {
 		System.out.println("==========================================");
 		Aliens aliens3 = new Aliens(45, "Azul");
 		aliens3.imprimir();
-
 	}
-
 }

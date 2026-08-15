@@ -1,8 +1,3 @@
-/*Pruebas con IA: "La clase Aliens tiene un constructor que recibe tamanio y color. Si el tamaño es 
- *menor a 5, se ajusta a 5. Si es mayor a 30, se ajusta a 30. Si está entre 5 y 30, se queda igual.
- *Además, el constructor calcula tres precios a partir del tamaño ya ajustado: precioCuerpo es el
- *20% del tamaño, precioExtremidad es el 10% del tamaño, y precioOjo es el 5% del tamaño."*/
-
 package com.krakedev.alienJUnit;
 
 import org.junit.jupiter.api.Test;

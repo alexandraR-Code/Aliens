@@ -74,12 +74,20 @@ public class Aliens {
 	/*Metodo agregarBrazos*/
 	public boolean agregarBrazos(int cantidad) {
 		int totalExtremindades = this.numeroBrazos + this.numeroPies + cantidad;
-		boolean cantidadTotal;
 		if(totalExtremindades <= 10) {
-			cantidadTotal = true;
-		
-			return cantidadTotal;
+			this.numeroBrazos = numeroBrazos + cantidad;
+			return true;
 		}else{
+			return false;
+		}
+	}
+	/*Metodo agregarPierna*/
+	public boolean agregarPiernas(int cantidad) {
+		int totalExtremidades = this.numeroBrazos + this.numeroPies + cantidad;
+		if(totalExtremidades <= 10) {
+			this.numeroPies = this.numeroPies + cantidad;
+			return true;
+		}else {
 			return false;
 		}
 	}

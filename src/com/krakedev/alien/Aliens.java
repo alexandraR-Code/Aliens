@@ -69,8 +69,19 @@ public class Aliens {
 		System.out.println("Número de pies: " + this.getNumeroPies());
 		System.out.println("Precio por extremidades: " + this.getPrecioExtremidad());
 		System.out.println("Precio por ojo: " + this.getPrecioOjo());
-		System.out.println("Precio cuerpo: " + this.getPrecioCuerpo());
+		System.out.println("Precio cuerpo: " + this.getPrecioCuerpo());	
+	}
+	/*Metodo agregarBrazos*/
+	public boolean agregarBrazos(int cantidad) {
+		int totalExtremindades = this.numeroBrazos + this.numeroPies + cantidad;
+		boolean cantidadTotal;
+		if(totalExtremindades <= 10) {
+			cantidadTotal = true;
 		
+			return cantidadTotal;
+		}else{
+			return false;
+		}
 	}
 	
 	

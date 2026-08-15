@@ -10,6 +10,8 @@ public class Aliens {
 	private double precioExtremidad;
 	private double precioOjo;
 	private double precioCuerpo;
+	/*Nuevo atributo*/
+	private double precioTotal = 0;
 	
 	/*Constructor que recibe 2 atributos*/
 	
@@ -76,6 +78,7 @@ public class Aliens {
 		int totalExtremindades = this.numeroBrazos + this.numeroPies + cantidad;
 		if(totalExtremindades <= 10) {
 			this.numeroBrazos = numeroBrazos + cantidad;
+			calcularPrecioTotal();
 			return true;
 		}else{
 			return false;
@@ -86,6 +89,7 @@ public class Aliens {
 		int totalExtremidades = this.numeroBrazos + this.numeroPies + cantidad;
 		if(totalExtremidades <= 10) {
 			this.numeroPies = this.numeroPies + cantidad;
+			calcularPrecioTotal();
 			return true;
 		}else {
 			return false;
@@ -104,12 +108,24 @@ public class Aliens {
 		int totalOjos = this.numeroOjos + cantidad;
 		if (totalOjos <= maximoOjos) {
 		    this.numeroOjos = this.numeroOjos + cantidad;
+		    calcularPrecioTotal();
 		    return true;
 		} else {
 		    return false;
 		}
 	}
+	/*Metodo get para nuevo atributo */
+	public double getPrecioTotal() {
+		return precioTotal;
+	}
+	/*Metodo calcularPrecioTotal*/
+	public void calcularPrecioTotal() {
+		this.precioTotal = this.precioCuerpo +
+						((this.numeroBrazos + this.numeroPies)* this.precioExtremidad) + 
+						(this.numeroOjos * this.precioOjo);
+	}
+		
+		
+		
 	
-	
-
 }

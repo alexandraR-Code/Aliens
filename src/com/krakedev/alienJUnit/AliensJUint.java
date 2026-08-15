@@ -87,9 +87,62 @@ public class AliensJUint {
 		assertEquals(false, resultado3);
 		assertEquals(6, aliens.getNumeroPies());
 	}
+	/*====================================================================*/
+	@Test
+	public void precioTotalCasoValido() {
+		Aliens aliens = new Aliens(8, "Verde");
+		aliens.agregarOjos(3);
+		assertEquals(2.8, aliens.getPrecioTotal(), 0.001);
+	}
+	@Test
+	public void precioTotalCasoValidoPierna() {
+		Aliens aliens = new Aliens(56, "Amarillo");
+		aliens.agregarPiernas(5);
+		assertEquals(21.0, aliens.getPrecioTotal(), 0.001);
+	}
+	@Test 
+	public void precioTotalCasoValidoBrazo() {
+		Aliens aliens = new Aliens(2, "Dorado");
+		aliens.agregarBrazos(8);
+		assertEquals(5, aliens.getPrecioTotal(), 0.001);
+	}
 	
-	
-	
+	@Test
+	public void precioTotalCasoCombinado() {
+		Aliens aliens = new Aliens(36, "Naranja");
+		aliens.agregarBrazos(5);
+		assertEquals(21.0, aliens.getPrecioTotal(), 0.001);
+		
+		aliens.agregarOjos(7);
+		assertEquals(31.5, aliens.getPrecioTotal(), 0.001);
+		
+		aliens.agregarPiernas(4);
+		assertEquals(43.5, aliens.getPrecioTotal(), 0.001);
+	}
+	@Test
+	public void agregarOjosCasoRestriccion() {
+	    Aliens aliens = new Aliens(6, "verde");
+	    boolean resultado = aliens.agregarOjos(10);
+	    assertEquals(false, resultado);
+	    assertEquals(0, aliens.getNumeroOjos());
+	    assertEquals(0.0, aliens.getPrecioTotal(), 0.001);
+	}
+	@Test
+	public void agregarBrazosCasoRestriccion() {
+	    Aliens aliens = new Aliens(10, "verde");
+	    boolean resultado = aliens.agregarBrazos(15);
+	    assertEquals(false, resultado);
+	    assertEquals(0, aliens.getNumeroBrazos());
+	    assertEquals(0.0, aliens.getPrecioTotal(), 0.001);
+	}
+	@Test
+	public void agregarPiernasCasoRestriccion() {
+		Aliens aliens = new Aliens(9, "Verde");
+		boolean resultado = aliens.agregarPiernas(12);
+		assertEquals(false, resultado);
+		assertEquals(0, aliens.getNumeroPies());
+		assertEquals(0.0, aliens.getPrecioTotal(), 0.001);
+	}
 	
 	
 	
